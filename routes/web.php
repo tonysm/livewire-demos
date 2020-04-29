@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::livewire('lights', 'lights');
 
 Route::get('/home', 'HomeController@index')->name('home');
