@@ -20,5 +20,6 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::livewire('lights', 'lights');
+Route::livewire('licenses', 'licenses.seats-calculator');
 
 Route::get('/home', 'HomeController@index')->name('home');
