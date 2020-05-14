@@ -47,6 +47,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/stores-search') }}">Stores Search</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/boats-filters') }}">Boats Filters</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

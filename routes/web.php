@@ -24,6 +24,7 @@ Route::livewire('lights', 'lights');
 Route::livewire('licenses', 'licenses.seats-calculator');
 Route::livewire('sales-dashboard', 'sales.dashboard');
 Route::livewire('stores-search', 'stores.search');
+Route::livewire('boats-filters', 'boats.search');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('users', 'UsersController@index')->name('users.index');

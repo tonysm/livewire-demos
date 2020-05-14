@@ -89,6 +89,7 @@
                     <a href="{{ url('/licenses') }}">Licenses Example</a>
                     <a href="{{ url('/sales-dashboard') }}">Sales Dashboard</a>
                     <a href="{{ url('/stores-search') }}">Stores Search</a>
+                    <a href="{{ url('/boats-filters') }}">Boats Filters</a>
                 </div>
             </div>
         </div>
