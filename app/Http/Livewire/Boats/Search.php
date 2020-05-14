@@ -32,4 +32,13 @@ class Search extends Component
                 ->get(),
         ]);
     }
+
+    public function togglePrice(string $priceOption)
+    {
+        if (in_array($priceOption, $this->prices)) {
+            $this->prices = collect($this->prices)->filter(fn (string $price) => $price !== $priceOption)->all();
+        } else {
+            $this->prices[] = $priceOption;
+        }
+    }
 }

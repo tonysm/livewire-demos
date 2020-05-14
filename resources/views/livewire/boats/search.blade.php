@@ -1,22 +1,31 @@
 <div class="container">
     <form action="">
-        <div class="form-group">
-            <label for="Types">Types of boats</label>
-            <select wire:model="type" class="form-control">
-                <option value="">Any type</option>
-                @foreach($allTypes as $option)
-                    <option value="{{ $option }}">{{ $option }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Price</label>
-            <select wire:model="prices" class="form-control" multiple>
-                @foreach($allPrices as $option)
-                    <option value="{{ $option }}">{{ $option }}</option>
-                @endforeach
-            </select>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Types">Types of boats</label>
+                    <select wire:model="type" class="form-control">
+                        <option value="">Any type</option>
+                        @foreach($allTypes as $option)
+                            <option value="{{ $option }}">{{ $option }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="mb-2">Prices</div>
+                    <div class="btn-group" role="group" aria-label="Prices">
+                        @foreach($allPrices as $priceOption)
+                            <button
+                                wire:click.prevent="togglePrice('{{ $priceOption }}')"
+                                type="button"
+                                class="btn {{ in_array($priceOption, $prices) ? 'btn-primary' : 'btn-secondary' }}"
+                            >{{ $priceOption }}</button>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
     <div>
