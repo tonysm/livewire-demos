@@ -10,6 +10,8 @@ class Search extends Component
     public string $type = '';
     public array $prices = [];
 
+    protected $updatesQueryString = ['type', 'prices'];
+
     public array $allTypes = [];
     public array $allPrices = ['$', '$$', '$$$'];
 
@@ -20,6 +22,9 @@ class Search extends Component
             ->distinct()
             ->pluck('type')
             ->all();
+
+        $this->prices = collect(request('prices', []))->filter(fn ($price) => in_array($price, $this->allPrices))->values()->all();
+        $this->type = in_array(request('type'), $this->allTypes) ? request('type') : '';
     }
 
     public function render()
