@@ -10,5 +10,6 @@ $factory->define(Boat::class, function (Faker $faker) {
         'name' => $faker->words(3, true),
         'type' => $faker->randomElement(Boat::BOAT_TYPES),
         'price' => $faker->randomElement(['$', '$$', '$$$']),
+        'image' => $faker->imageUrl(),
     ];
 });

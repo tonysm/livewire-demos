@@ -18,6 +18,7 @@ class CreateBoatsTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('price');
+            $table->string('image');
             $table->timestamps();
         });
     }
